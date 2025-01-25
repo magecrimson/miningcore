@@ -301,6 +301,7 @@
         "twitter": "https://twitter.com/bitcoin",
         "telegram": "",
         "discord": "",
+		"Pricename": "Bitcoin",
         "coinbaseHasher": {
             "hash": "sha256d"
         },
