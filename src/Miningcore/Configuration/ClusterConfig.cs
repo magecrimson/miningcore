@@ -138,6 +138,12 @@ public abstract partial class CoinTemplate
     /// </summary>
     [JsonProperty(Order = -9)]
     public string Telegram { get; set; }
+	
+	/// <summary>
+    /// Pricename Price Lookup
+    /// </summary>
+    [JsonProperty(Order = -9)]
+    public string Pricename { get; set; }
 
     /// <summary>
     /// Arbitrary extension data
