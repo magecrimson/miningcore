@@ -14,6 +14,7 @@ using NBitcoin.DataEncoders;
 using Newtonsoft.Json.Linq;
 using Contract = Miningcore.Contracts.Contract;
 using Transaction = NBitcoin.Transaction;
+using Miningcore.Logging;
 
 namespace Miningcore.Blockchain.Bitcoin;
 
@@ -28,6 +29,7 @@ public class BitcoinJob
     protected bool isPoS;
     protected string txComment;
     protected PayeeBlockTemplateExtra payeeParameters;
+    private static readonly ILogger logger = LogUtil.GetCurrentClassLogger();
 
     protected Network network;
     protected IDestination poolAddressDestination;
@@ -431,7 +433,8 @@ public class BitcoinJob
                 var blockBytes = stream.ToArray();
 
 			// 🚀 Print raw block before submission
-			logger.Info(() => $"Serialized Block: {blockBytes.ToHexString()}");
+			logger.Info($"Serialized Block: {blockBytes.ToHexString()}");
+
 
         return blockBytes;
         }
