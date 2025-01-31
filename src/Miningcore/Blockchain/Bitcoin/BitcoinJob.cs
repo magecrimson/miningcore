@@ -428,12 +428,7 @@ public class BitcoinJob
                 bs.ReadWrite(mwebRaw);
             }
 
-                var blockBytes = stream.ToArray();
-
-			// 🚀 Print raw block before submission
-			logger.Info(() => $"Serialized Block: {blockBytes.ToHexString()}");
-
-        return blockBytes;
+            return stream.ToArray();
         }
     }
 
